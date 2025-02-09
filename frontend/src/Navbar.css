@@ -2,38 +2,37 @@
 
 /* main nav style */
 .nav-container {
-    background-color: #273e14;
-    padding: 1.2rem;
+    background-color: #FFF27D;
+    position: fixed; /* Fixes the navbar at the bottom */
+    bottom: 0; /* Positions it at the bottom */
+    width: 100%; /* Makes sure the navbar spans the entire width */
+    z-index: 1000;
   }
-  
-  /* second-level "product" nav style */
-  .product-nav-container {
-    background-color: #8dc365;
-  }
-  
-  /* remove bullets, flex horizontal */
-  .nav-container ul {
-    display: flex;
-    justify-content: space-around;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-container a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  .nav-container a:hover {
-    color: #a9d784;
-    font-weight: 900;
-    transition: color 0.3s ease;
-  }
-  
-  /* highlight for active nav link */
-  .active {
-    border-bottom: 2px solid white;
-  }
-  
+
+.icon {
+  width: 30;
+  height: 30;
+  color: #FF8C00; /* Change color */
+  fill: #FF8C00; /* Some icons respond to this */
+}
+
+/* remove bullets, flex horizontal */
+.nav-container ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.nav-container a:hover {
+  color: #FFFFFF;
+  font-weight: 900;
+  transition: color 0.3s ease;
+}
+
+/* highlight for active nav link */
+.active {
+  border-bottom: 2px solid white;
+}
