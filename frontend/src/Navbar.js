@@ -1,6 +1,12 @@
 // src/ProductNavbar.js
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Icon } from '@iconify/react';
+// import homeIcon from '@iconify/icons-mdi/home';
+// import missionsIcon from '@iconify/icons-mdi/clipboard'
+// import beehiveIcon from '@iconify/icons-mdi/beehive-outline';
+
+
 import "./Navbar.css";
 
 function Navbar() {
@@ -14,7 +20,10 @@ function Navbar() {
               to="/"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
-              Home
+              <Icon icon="material-symbols:home-outline-rounded" 
+              style={{ color: "#FF8C00", fill: "#FF8C00" }} 
+              width={40} 
+              height={40} />
             </NavLink>
           </li>
           <li>
@@ -22,15 +31,32 @@ function Navbar() {
               to="/missions"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
-              Missions
+              <Icon icon ="uil:clipboard"
+              style={{ color: "#FF8C00", fill: "#FF8C00" }} 
+              width={40} 
+              height={40}/>
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/topicdetail"
+              to="/social"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
-              Topic Detail Page
+              <Icon icon="mdi:beehive-outline" 
+              style={{ color: "#FF8C00", fill: "#FF8C00" }} 
+              width={40} 
+              height={40}/>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/profile"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              <Icon icon="iconamoon:profile"
+              style={{ color: "#FF8C00", fill: "#FF8C00" }} 
+              width={40} 
+              height={40}/>
             </NavLink>
           </li>
         </ul>
