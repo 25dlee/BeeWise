@@ -1,0 +1,39 @@
+/* src/Navbar.css */
+
+/* main nav style */
+.nav-container {
+    background-color: #273e14;
+    padding: 1.2rem;
+  }
+  
+  /* second-level "product" nav style */
+  .product-nav-container {
+    background-color: #8dc365;
+  }
+  
+  /* remove bullets, flex horizontal */
+  .nav-container ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-container a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .nav-container a:hover {
+    color: #a9d784;
+    font-weight: 900;
+    transition: color 0.3s ease;
+  }
+  
+  /* highlight for active nav link */
+  .active {
+    border-bottom: 2px solid white;
+  }
+  
