@@ -34,7 +34,7 @@ function NewHome() {
   });
 
   return (
-    <div style={{ width: "100%", minHeight: "100vh", backgroundColor: "#FAFAFA", display: "flex", flexDirection: "column", alignItems: "center", padding: "1rem" }}>
+    <div style={{ width: "100%", minHeight: "100vh", backgroundColor: "#FAFAFA", display: "flex", flexDirection: "column", alignItems: "center", padding: "1rem", marginTop: "10rem" }}>
       <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginBottom: "1rem" }}>
         <button style={buttonStyle("Popular")} onClick={() => handleButtonClick("Popular", topicsPopular)}>Popular</button>
         <button style={buttonStyle("Trending")} onClick={() => handleButtonClick("Trending", topicsTrending)}>Trending</button>

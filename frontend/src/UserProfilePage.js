@@ -63,7 +63,6 @@ function UserProfilePage() {
             left: 175,
             color: "black",
             fontSize: 40,
-            fontFamily: "Old Standard TT",
             fontWeight: "400",
             wordWrap: "break-word",
           }}
@@ -81,7 +80,6 @@ function UserProfilePage() {
             left: 180,
             color: "black",
             fontSize: 22,
-            fontFamily: "Old Standard TT",
             fontWeight: "400",
             wordWrap: "break-word",
             width: 200,
@@ -99,7 +97,6 @@ function UserProfilePage() {
             left: 28,
             color: "black",
             fontSize: 32,
-            fontFamily: "Old Standard TT",
             fontWeight: "400",
             wordWrap: "break-word",
           }}

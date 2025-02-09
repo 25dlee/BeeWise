@@ -8,6 +8,7 @@ import "./App.css";
 import News from "./News";
 import SocialPage from "./SocialPage";
 import UserProfilePage from "./UserProfilePage"
+import TopBar from "./TopBar"
 
 // 1) Import the ScoreProvider
 import { ScoreProvider } from "./ScoreContext";
@@ -17,6 +18,7 @@ function App() {
     // 2) Wrap the Router (and everything else) in ScoreProvider
     <ScoreProvider>
       <Router>
+        <TopBar />
         <Navbar />
         <div>
           <Routes>
