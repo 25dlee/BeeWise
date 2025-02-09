@@ -2,9 +2,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Icon } from '@iconify/react';
-// import homeIcon from '@iconify/icons-mdi/home';
-// import missionsIcon from '@iconify/icons-mdi/clipboard'
-// import beehiveIcon from '@iconify/icons-mdi/beehive-outline';
 
 
 import "./Navbar.css";
