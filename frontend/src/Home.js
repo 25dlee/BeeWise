@@ -16,11 +16,11 @@ function Home() {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        const loadedArticles = Object.keys(data).map((source, index) => ({
+        const loadedArticles = Object.keys(data).map((source) => ({
           source,
           title: data[source].title || "",
           url: data[source].url || "#",
-          route: `/news?topicId=${source.toLowerCase()}`, // Ensure this is a relative path
+          route: `/news?topicId=${source.toLowerCase()}`,
         }));
         setArticles(loadedArticles);
       } catch (err) {
@@ -30,131 +30,77 @@ function Home() {
   }, []);
 
   return (
-    <div style={{ width: "100%", height: "100%", background: "white", position: "relative" }}>
-      <div
-        style={{
-          width: 393,
-          height: 852,
-          left: 0,
-          top: 0,
-          position: "absolute",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          display: "inline-flex",
-        }}
-      >
-      </div>
-      <div
-        style={{
-          width: 197,
-          height: 17,
-          left: 83,
-          top: 77,
-          position: "absolute",
-          background: "#D9D9D9",
-          borderRadius: 10,
-        }}
-      />
-      <div
-        style={{
-          left: 290,
-          top: 66,
-          position: "absolute",
-          color: "black",
-          fontSize: 32,
-          fontFamily: "Inter",
-          fontWeight: "400",
-          wordWrap: "break-word",
-        }}
-      >
-        24
-      </div>
-      <div
-        style={{
-          width: 251,
-          height: 37,
-          left: 23,
-          top: 119,
-          position: "absolute",
-          background: "#D9D9D9",
-          borderRadius: 10,
-        }}
-      />
-      <div
-        style={{
-          width: 91,
-          height: 37,
-          left: 280,
-          top: 119,
-          position: "absolute",
-          background: "#D9D9D9",
-          borderRadius: 10,
-        }}
-      />
-      <h1 style={{ textAlign: "center", marginTop: "20px" }}>Trump Tariffs</h1>
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        background: "white",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Trump Tariffs</h1>
       {error && <p style={{ color: "red", textAlign: "center" }}>Error: {error}</p>}
 
-      {articles.map((article, idx) => (
-        <div
-          key={idx}
-          style={{
-            width: 348,
-            height: 120, // Increased height for better text spacing
-            left: 23,
-            position: "absolute",
-            top: 177 + idx * 138, // Adjust spacing between buttons
-            background: idx === 0 ? "#FBE45B" : idx === 1 ? "#2C7C94" : "#C4AA23",
-            borderRadius: 10,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: "10px 20px",
-            overflow: "hidden", // Prevent overflow
-            boxSizing: "border-box",
-          }}
-        >
-          <div style={{ flex: 1, marginRight: "10px" }}>
-            {/* Title */}
-            <h2
-              style={{
-                fontSize: "18px", // Adjusted font size for better fit
-                margin: 0,
-                wordWrap: "break-word", // Ensure text wraps instead of overflowing
-                overflow: "hidden", // Prevent overflow
-                textOverflow: "ellipsis", // Add ellipsis for longer titles
-                whiteSpace: "normal", // Allow wrapping
-              }}
-            >
-              {article.title}
-            </h2>
-            {/* Source */}
-            <p
-              style={{
-                fontSize: "14px",
-                color: "black",
-                margin: "5px 0 0 0", // Adjusted margins for spacing
-                wordWrap: "break-word",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                whiteSpace: "normal",
-              }}
-            >
-              {article.source}
-            </p>
-          </div>
-          <Link
-            to={article.route}
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "15px" }}>
+        {articles.map((article, idx) => (
+          <div
+            key={idx}
             style={{
-              textDecoration: "none",
-              fontSize: "24px", // Larger arrow icon
-              color: "black",
+              width: "350px",
+              minHeight: "120px",
+              background: "#FBE45B",
+              borderRadius: "10px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "15px",
+              boxSizing: "border-box",
+              textAlign: "left",
             }}
           >
-            ➜
-          </Link>
-        </div>
-      ))}
+            <div style={{ flex: 1, marginRight: "10px" }}>
+              <h2
+                style={{
+                  fontSize: "18px",
+                  margin: 0,
+                  wordWrap: "break-word",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "normal",
+                }}
+              >
+                {article.title}
+              </h2>
+              <p
+                style={{
+                  fontSize: "14px",
+                  color: "black",
+                  margin: "5px 0 0 0",
+                  wordWrap: "break-word",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "normal",
+                }}
+              >
+                {article.source}
+              </p>
+            </div>
+            <Link
+              to={article.route}
+              style={{
+                textDecoration: "none",
+                fontSize: "24px",
+                color: "black",
+              }}
+            >
+              ➜
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
