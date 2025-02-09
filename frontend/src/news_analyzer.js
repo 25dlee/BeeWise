@@ -7,7 +7,7 @@ let articles = [];
 
 // The S3 JSON location:
 const S3_JSON_URL =
-  "https://hackduke.s3.us-east-1.amazonaws.com/main_database/Trump+Tarrifs.json"; 
+  "https://hackduke.s3.us-east-1.amazonaws.com/main_database/Trump+Tarifs.json"; 
 // ^^^^^ Replace with your actual S3 URL for the JSON shown in the question
 // e.g. https://hackduke.s3.us-east-1.amazonaws.com/main_database/BLAH.json
 
