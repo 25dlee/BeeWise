@@ -7,3 +7,4 @@ To install requirements, make sure you're in the backend directory and run `pip 
 
 
 ## Frontend
+In the frontend directory, `run npm install` to install dependencies.
