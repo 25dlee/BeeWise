@@ -10,6 +10,8 @@ import CNNNews1 from "./CNNNews1";
 import FoxNews1 from "./FoxNews1";
 import APNews1 from "./APNews1";
 import News from "./News";
+import UserProfilePage from "./UserProfilePage";
+
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
           <Route path="/news" element={<News />} />
           {/* New third page route */}
           <Route path="/topicdetail" element={<TopicDetailPage />} />
+          <Route path="/profile" element={<UserProfilePage />} />
+
         </Routes>
       </div>
     </Router>
