@@ -88,7 +88,6 @@ function News1() {
             style={{
               color: "black",
               fontSize: "20px",
-              fontFamily: "Inter",
               fontWeight: "400",
               wordWrap: "break-word",
               textAlign: "center",
@@ -99,44 +98,42 @@ function News1() {
             {selectedArticle.title}
           </h1>
           <p
-            style={{
-              color: "black",
-              fontSize: "14px",
-              fontFamily: "Inter",
-              fontWeight: "400",
-              wordWrap: "break-word",
-              textAlign: "justify",
-              width: "100%",
-              maxWidth: "90%",
-              marginTop: "10px",
-              whiteSpace: "normal",
-            }}
-          >
-            {selectedArticle.bias}
-          </p>
+    style={{
+      backgroundColor: "#F8D7DA", // Light red for bias
+      color: "#721C24",
+      fontSize: "14px",
+      fontWeight: "bold",
+      padding: "8px 15px",
+      borderRadius: "15px",
+      textAlign: "center",
+      display: "inline-block",
+      marginTop: "10px",
+    }}
+  >
+    Bias: {selectedArticle.bias}
+  </p>
+          <p
+    style={{
+      backgroundColor: "#D1ECF1", // Light blue for neutral feel
+      color: "#0C5460",
+      fontSize: "14px",
+      fontWeight: "bold",
+      padding: "8px 15px",
+      borderRadius: "15px",
+      textAlign: "center",
+      display: "inline-block",
+      marginTop: "10px",
+    }}
+  >
+    Sentiment: {selectedArticle.sentiment}
+  </p>
+
+
+
           <p
             style={{
               color: "black",
               fontSize: "14px",
-              fontFamily: "Inter",
-              fontWeight: "400",
-              wordWrap: "break-word",
-              textAlign: "justify",
-              width: "100%",
-              maxWidth: "90%",
-              marginTop: "10px",
-              whiteSpace: "normal",
-            }}
-          >
-            {selectedArticle.sentiment}
-          </p>
-
-
-          <p
-            style={{
-              color: "black",
-              fontSize: "14px",
-              fontFamily: "Inter",
               fontWeight: "400",
               wordWrap: "break-word",
               textAlign: "justify",
