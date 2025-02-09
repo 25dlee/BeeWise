@@ -2,35 +2,27 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+// Define news topics with their corresponding images
+const topicsPopular = [
+  { title: "Trump Tariffs", image: "https://d3i6fh83elv35t.cloudfront.net/static/2025/01/2025-01-31T211323Z_640077057_RC29LCA2X64B_RTRMADP_3_USA-TRUMP-1024x682.jpg" },
+  { title: "AI-Mega Deal", image: "https://deadline.com/wp-content/uploads/2025/01/GettyImages-2195165799.jpg?w=681&h=383&crop=1" },
+  { title: "Facebook Content Policy", image: "https://cdn.aarp.net/content/dam/aarpe/en/home/home-family/personal-technology/info-2020/delete-old-facebook-posts/_jcr_content/root/container_main/container_body_main/container_body1/container_body_cf/container_image/articlecontentfragment/cfimage.coreimg.50.688.jpeg/content/dam/aarp/home-and-family/family-and-friends/2020/06/1140-facebook-post.jpg" },
+  { title: "Border Crisis", image: "https://media.wbur.org/wp/2023/01/GettyImages-1235318693-1000x667.jpg" },
+  { title: "Climate Change", image: "https://www.nationalgrid.com/sites/default/files/images/PolarBearWithCubOnSeaIce_640x360.jpg" },
+  { title: "Abortion Rights", image: "https://stateline.org/wp-content/uploads/2024/09/Florida-abortion-measure-1024x683.jpg" }
+];
+
+const topicsTrending = [
+  topicsPopular[1], topicsPopular[3], topicsPopular[5],
+  topicsPopular[0], topicsPopular[2], topicsPopular[4]
+];
+
+const topicsRecent = [
+  topicsPopular[2], topicsPopular[4], topicsPopular[0],
+  topicsPopular[5], topicsPopular[1], topicsPopular[3]
+];
+
 function NewHome() {
-  // Define three different orderings of our topics:
-  const topicsPopular = [
-    "Trump Tariffs",
-    "AI-Mega Deal",
-    "Facebook Content Policy",
-    "Border Crisis",
-    "Climate Change",
-    "Abortion Rights",
-  ];
-
-  const topicsTrending = [
-    "AI-Mega Deal",
-    "Border Crisis",
-    "Abortion Rights",
-    "Trump Tariffs",
-    "Facebook Content Policy",
-    "Climate Change",
-  ];
-
-  const topicsRecent = [
-    "Facebook Content Policy",
-    "Climate Change",
-    "Trump Tariffs",
-    "Abortion Rights",
-    "AI-Mega Deal",
-    "Border Crisis",
-  ];
-
   // Start with "popular" as the default ordering
   const [topics, setTopics] = useState(topicsPopular);
 
@@ -39,11 +31,6 @@ function NewHome() {
   const showTrending = () => setTopics(topicsTrending);
   const showRecent = () => setTopics(topicsRecent);
 
-  // We want a 2x3 grid of clickable frames
-  // Only the "Trump Tariffs" frame should link to Home.js
-  // The others do nothing for now.
-  //
-  // We'll style them in a simple way for demonstration.
   return (
     <div
       style={{
@@ -70,7 +57,7 @@ function NewHome() {
         <button onClick={showRecent}>Recent</button>
       </div>
 
-      {/* 2x3 grid of topic frames */}
+      {/* 2x3 grid of topic frames with images */}
       <div
         style={{
           display: "grid",
@@ -80,50 +67,89 @@ function NewHome() {
           maxWidth: "600px",
         }}
       >
-        {topics.map((topic, index) => {
-          // If it's "Trump Tariffs", we link to /home
-          if (topic === "Trump Tariffs") {
-            return (
+        {topics.map((topic, index) => (
+          <div
+            key={index}
+            style={{
+              position: "relative",
+              borderRadius: "8px",
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              height: "200px",
+              backgroundColor: "#fff",
+              border: "1px solid #ccc",
+              cursor: topic.title === "Trump Tariffs" ? "pointer" : "default",
+            }}
+          >
+            {/* Clickable Link ONLY for Trump Tariffs */}
+            {topic.title === "Trump Tariffs" ? (
               <Link
-                key={index}
                 to="/home"
                 style={{
                   textDecoration: "none",
                   color: "inherit",
-                  border: "1px solid #ccc",
-                  backgroundColor: "#fff",
+                  width: "100%",
+                  height: "100%",
                   display: "flex",
+                  flexDirection: "column",
                   alignItems: "center",
-                  justifyContent: "center",
-                  height: "100px",
-                  borderRadius: "8px",
-                  fontWeight: "bold",
                 }}
               >
-                {topic}
+                <img
+                  src={topic.image}
+                  alt={topic.title}
+                  style={{
+                    width: "100%",
+                    height: "80%",
+                    objectFit: "cover",
+                  }}
+                />
+                <div
+                  style={{
+                    width: "100%",
+                    textAlign: "center",
+                    padding: "5px",
+                    background: "rgba(0, 0, 0, 0.7)",
+                    color: "#fff",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                  }}
+                >
+                  {topic.title}
+                </div>
               </Link>
-            );
-          } else {
-            // Otherwise, just a button that does nothing for now
-            return (
-              <div
-                key={index}
-                style={{
-                  border: "1px solid #ccc",
-                  backgroundColor: "#fff",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  height: "100px",
-                  borderRadius: "8px",
-                  fontWeight: "bold",
-                }}
-              >
-                {topic}
-              </div>
-            );
-          }
-        })}
+            ) : (
+              <>
+                {/* Non-clickable frame */}
+                <img
+                  src={topic.image}
+                  alt={topic.title}
+                  style={{
+                    width: "100%",
+                    height: "80%",
+                    objectFit: "cover",
+                  }}
+                />
+                <div
+                  style={{
+                    width: "100%",
+                    textAlign: "center",
+                    padding: "5px",
+                    background: "rgba(0, 0, 0, 0.7)",
+                    color: "#fff",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                  }}
+                >
+                  {topic.title}
+                </div>
+              </>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
