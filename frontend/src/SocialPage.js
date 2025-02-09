@@ -1,29 +1,11 @@
-import React, { useState } from "react";
-import "./SocialPage.css"; // Custom CSS for detailed styling
-
-const initialFriends = [
-  { id: 1, name: "BeeLover_01", points: 12 },
-  { id: 2, name: "QueenBee_02", points: 10 },
-  { id: 3, name: "HoneyHunter_03", points: 5 },
-  { id: 4, name: "BuzzMaster_04", points: 2 },
-  { id: 5, name: "You", points: 0 },
-];
+// SocialPage.js
+import React, { useContext } from "react";
+import { ScoreContext } from "./ScoreContext";  // Adjust path as needed
+import "./SocialPage.css";
 
 function SocialPage() {
-  const [friends, setFriends] = useState(initialFriends);
-
-  // Function to increment points, called externally by other app logic
-  const incrementPoints = (id, pointsToAdd) => {
-    setFriends((prevFriends) =>
-      prevFriends
-        .map((friend) =>
-          friend.id === id
-            ? { ...friend, points: friend.points + pointsToAdd }
-            : friend
-        )
-        .sort((a, b) => b.points - a.points)
-    );
-  };
+  // Instead of local state, use the context:
+  const { friends, incrementPoints } = useContext(ScoreContext);
 
   return (
     <div className="social-page">
