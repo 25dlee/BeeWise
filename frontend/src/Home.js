@@ -20,7 +20,7 @@ function Home() {
           source,
           title: data[source].title || "",
           url: data[source].url || "#",
-          route: `/news?topicId=${source.toLowerCase()}`,
+          route: `/news?topicId=${source.toLowerCase()}`, // Ensure this is a relative path
         }));
         setArticles(loadedArticles);
       } catch (err) {
@@ -44,11 +44,6 @@ function Home() {
           display: "inline-flex",
         }}
       >
-        <img
-          style={{ width: 473, height: 932 }}
-          src="https://via.placeholder.com/473x932"
-          alt="Placeholder"
-        />
       </div>
       <div
         style={{
@@ -105,23 +100,57 @@ function Home() {
           key={idx}
           style={{
             width: 348,
-            height: 98,
+            height: 120, // Increased height for better text spacing
             left: 23,
             position: "absolute",
-            top: 177 + idx * 118,
+            top: 177 + idx * 138, // Adjust spacing between buttons
             background: idx === 0 ? "#FBE45B" : idx === 1 ? "#2C7C94" : "#C4AA23",
             borderRadius: 10,
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             padding: "10px 20px",
+            overflow: "hidden", // Prevent overflow
+            boxSizing: "border-box",
           }}
         >
-          <div>
-            <h2 style={{ fontSize: "20px", margin: 0 }}>{article.title}</h2>
-            <p style={{ fontSize: "16px", color: "black" }}>{article.source}</p>
+          <div style={{ flex: 1, marginRight: "10px" }}>
+            {/* Title */}
+            <h2
+              style={{
+                fontSize: "18px", // Adjusted font size for better fit
+                margin: 0,
+                wordWrap: "break-word", // Ensure text wraps instead of overflowing
+                overflow: "hidden", // Prevent overflow
+                textOverflow: "ellipsis", // Add ellipsis for longer titles
+                whiteSpace: "normal", // Allow wrapping
+              }}
+            >
+              {article.title}
+            </h2>
+            {/* Source */}
+            <p
+              style={{
+                fontSize: "14px",
+                color: "black",
+                margin: "5px 0 0 0", // Adjusted margins for spacing
+                wordWrap: "break-word",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "normal",
+              }}
+            >
+              {article.source}
+            </p>
           </div>
-          <Link to={`http://localhost:3000${article.route}`} style={{ textDecoration: "none", fontSize: "18px", color: "black" }}>
+          <Link
+            to={article.route}
+            style={{
+              textDecoration: "none",
+              fontSize: "24px", // Larger arrow icon
+              color: "black",
+            }}
+          >
             ➜
           </Link>
         </div>
