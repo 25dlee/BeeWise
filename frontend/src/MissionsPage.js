@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function SecondPage() {
+function MissionsPage() {
   return (
     <div style={{width: '100%', height: '100%', position: 'relative', background: 'white'}}>
       <div style={{width: 393, height: 852, left: 0, top: 0, position: 'absolute', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', display: 'inline-flex'}}>
@@ -75,4 +75,4 @@ function SecondPage() {
   );
 }
 
-export default SecondPage;
+export default MissionsPage;

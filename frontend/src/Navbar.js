@@ -3,7 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
-function ProductNavbar() {
+function Navbar() {
   return (
     <header>
       {/* Single nav container for all your pages */}
@@ -19,7 +19,7 @@ function ProductNavbar() {
           </li>
           <li>
             <NavLink
-              to="/second"
+              to="/missions"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Missions
@@ -27,10 +27,10 @@ function ProductNavbar() {
           </li>
           <li>
             <NavLink
-              to="/third"
+              to="/topicdetail"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
-              Third Page
+              Topic Detail Page
             </NavLink>
           </li>
         </ul>
@@ -39,4 +39,4 @@ function ProductNavbar() {
   );
 }
 
-export default ProductNavbar;
+export default Navbar;

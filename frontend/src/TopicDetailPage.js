@@ -1,7 +1,7 @@
 // src/ThirdPage.js
 import React from "react";
 
-function ThirdPage() {
+function TopicDetailPage() {
   return (
     <div style={{width: '100%', height: '100%', position: 'relative', background: 'white'}}>
       <div style={{width: 393, height: 852, left: 0, top: 0, position: 'absolute'}} />
@@ -51,4 +51,4 @@ function ThirdPage() {
   );
 }
 
-export default ThirdPage;
+export default TopicDetailPage;
