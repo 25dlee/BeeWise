@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
+// Home.js
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { ScoreContext } from "./ScoreContext";  // Adjust path as needed
 
 const S3_JSON_URL = "https://hackduke.s3.us-east-1.amazonaws.com/main_database/Trump+Tariffs.json";
 
 function Home() {
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState(null);
+
+  // Bring in incrementYouPoints from context
+  const { incrementYouPoints } = useContext(ScoreContext);
 
   useEffect(() => {
     (async function fetchArticles() {
@@ -71,6 +76,7 @@ function Home() {
                   textOverflow: "ellipsis",
                   whiteSpace: "normal",
                 }}
+                onClick={incrementYouPoints}
               >
                 {article.title}
               </h2>
@@ -84,6 +90,7 @@ function Home() {
                   textOverflow: "ellipsis",
                   whiteSpace: "normal",
                 }}
+                onClick={incrementYouPoints}
               >
                 {article.source}
               </p>
@@ -95,6 +102,7 @@ function Home() {
                 fontSize: "24px",
                 color: "black",
               }}
+              onClick={incrementYouPoints}
             >
               ➜
             </Link>
