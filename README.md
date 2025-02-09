@@ -5,7 +5,7 @@ Due to the increasing influence of social media companies, news outlets have oft
 
 What if the excitement around news could be generated to promote an approach of diversifying one's viewpoints and looking at issues through a broader lens? **We believe it can**, and we have done so with our app, **BeeWise**. Using gamified news content, the user is rewarded by taking a more complete path to attaining their own thoughts and opinions on prominent news stories.
 
-**GitHub repository**: [https://github.com/25dlee/HackDuke25](https://github.com/25dlee/HackDuke25)
+**GitHub repository**: [https://github.com/25dlee/HackDuke25](https://github.com/25dlee/BeeWise)
 
 **Motivation behind this project includes**:
 - Disinformation in news sources
