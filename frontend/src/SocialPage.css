@@ -1,0 +1,100 @@
+.social-page {
+    font-family: "Inter", sans-serif;
+    background: #fff7e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .leaderboard-container {
+    width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fdf2b6;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .leaderboard-title {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    background: #ffc107;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .leaderboard {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .leaderboard-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff7c2;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .leaderboard-item.gold {
+    background: #ffd700;
+  }
+  
+  .leaderboard-item.silver {
+    background: #c0c0c0;
+  }
+  
+  .leaderboard-item.bronze {
+    background: #cd7f32;
+  }
+  
+  .rank .badge {
+    width: 40px;
+    height: 40px;
+    background: #ffc107;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .info {
+    flex: 1;
+    margin-left: 10px;
+  }
+  
+  .name {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .points {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .increment-button {
+    background: #ffcc00;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .increment-button:hover {
+    background: #ffb700;
+    transform: scale(1.05);
+  }
+  
