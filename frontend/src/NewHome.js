@@ -1,6 +1,6 @@
 // src/NewHome.js
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import TopicCard from "./TopicCard"; // Import the TopicCard component
 
 // Define news topics with their corresponding images
 const topicsPopular = [
@@ -68,87 +68,7 @@ function NewHome() {
         }}
       >
         {topics.map((topic, index) => (
-          <div
-            key={index}
-            style={{
-              position: "relative",
-              borderRadius: "8px",
-              overflow: "hidden",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "flex-start",
-              height: "200px",
-              backgroundColor: "#fff",
-              border: "1px solid #ccc",
-              cursor: topic.title === "Trump Tariffs" ? "pointer" : "default",
-            }}
-          >
-            {/* Clickable Link ONLY for Trump Tariffs */}
-            {topic.title === "Trump Tariffs" ? (
-              <Link
-                to="/home"
-                style={{
-                  textDecoration: "none",
-                  color: "inherit",
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  src={topic.image}
-                  alt={topic.title}
-                  style={{
-                    width: "100%",
-                    height: "80%",
-                    objectFit: "cover",
-                  }}
-                />
-                <div
-                  style={{
-                    width: "100%",
-                    textAlign: "center",
-                    padding: "5px",
-                    background: "rgba(0, 0, 0, 0.7)",
-                    color: "#fff",
-                    fontWeight: "bold",
-                    fontSize: "14px",
-                  }}
-                >
-                  {topic.title}
-                </div>
-              </Link>
-            ) : (
-              <>
-                {/* Non-clickable frame */}
-                <img
-                  src={topic.image}
-                  alt={topic.title}
-                  style={{
-                    width: "100%",
-                    height: "80%",
-                    objectFit: "cover",
-                  }}
-                />
-                <div
-                  style={{
-                    width: "100%",
-                    textAlign: "center",
-                    padding: "5px",
-                    background: "rgba(0, 0, 0, 0.7)",
-                    color: "#fff",
-                    fontWeight: "bold",
-                    fontSize: "14px",
-                  }}
-                >
-                  {topic.title}
-                </div>
-              </>
-            )}
-          </div>
+          <TopicCard key={index} topic_title={topic.title} image_url={topic.image} />
         ))}
       </div>
     </div>

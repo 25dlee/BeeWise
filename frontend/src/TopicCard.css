@@ -1,0 +1,5 @@
+
+.topic-title:hover {
+    color: #FFC235;  /* Change color to yellow */
+    text-decoration: underline;  /* Underline the text */
+}

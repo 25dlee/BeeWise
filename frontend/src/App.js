@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Home";             // Old home
 import NewHome from "./NewHome";       // New landing page
 import MissionsPage from "./MissionsPage";
-import TopicDetailPage from "./TopicDetailPage";  
 import Navbar from "./Navbar";
 import "./App.css";
 import CNNNews1 from "./CNNNews1";
@@ -16,6 +15,7 @@ import SocialPage from "./SocialPage";
 function App() {
   return (
     <Router>
+      {/* add navbar at top */}
       <Navbar />
       <div>
         <Routes>
@@ -31,9 +31,6 @@ function App() {
           <Route path="/news1-fox" element={<FoxNews1 />} />
           <Route path="/news1-ap" element={<APNews1 />} />
           <Route path="/news" element={<News />} />
-          
-          {/* Existing third page route */}
-          <Route path="/topicdetail" element={<TopicDetailPage />} />
         </Routes>
       </div>
     </Router>
