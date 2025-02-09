@@ -11,6 +11,7 @@ import CNNNews1 from "./CNNNews1";
 import FoxNews1 from "./FoxNews1";
 import APNews1 from "./APNews1";
 import News from "./News";
+import SocialPage from "./SocialPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/home" element={<Home />} />
 
           <Route path="/missions" element={<MissionsPage />} />
+          <Route path="/social" element={<SocialPage />} />
           <Route path="/news1-cnn" element={<CNNNews1 />} />
           <Route path="/news1-fox" element={<FoxNews1 />} />
           <Route path="/news1-ap" element={<APNews1 />} />
